@@ -34,7 +34,7 @@ const sceneVariants = {
   exit: { opacity: 0, scale: 0.95, filter: "blur(10px)" },
 };
 
-const sceneTransition = { duration: 1.2, ease: [0.22, 1, 0.36, 1] };
+const sceneTransition = { duration: 1.2, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] };
 
 const WeddingApp = () => {
   const [isOpened, setIsOpened] = useState(false);
