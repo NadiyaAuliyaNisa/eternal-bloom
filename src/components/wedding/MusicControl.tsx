@@ -11,12 +11,15 @@ const MusicControl = ({ shouldPlay }: MusicControlProps) => {
   const [bars, setBars] = useState([0.4, 0.7, 0.5, 0.8]);
 
   useEffect(() => {
-    // Use a royalty-free romantic piano track
-    const audio = new Audio(
-      "https://cdn.pixabay.com/audio/2024/11/28/audio_3a4f12bd8a.mp3"
-    );
+    // 🎵 CUSTOM MUSIC: Replace the URL below with your own MP3 file
+    // e.g. a romantic instrumental inspired by "The Way You Look At Me" – Nyoman Paul
+    // You can upload your own MP3 and paste the URL here.
+    const MUSIC_URL =
+      "https://cdn.pixabay.com/audio/2024/11/28/audio_3a4f12bd8a.mp3";
+
+    const audio = new Audio(MUSIC_URL);
     audio.loop = true;
-    audio.volume = 0.3;
+    audio.volume = 0.25;
     audioRef.current = audio;
 
     return () => {
