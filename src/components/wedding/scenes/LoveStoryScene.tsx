@@ -8,7 +8,7 @@ const timeline = [
 
 const LoveStoryScene = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full relative z-20 px-6">
+    <div className="flex flex-col items-center justify-center h-full w-full relative z-20 px-6 pb-20 sm:pb-24">
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

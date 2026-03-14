@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const NamesScene = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full relative z-20 px-6">
+    <div className="flex flex-col items-center justify-center h-full w-full relative z-20 px-6 pb-20 sm:pb-24">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20 max-w-4xl">
         {/* Groom */}
         <motion.div

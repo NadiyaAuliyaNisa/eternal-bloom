@@ -3,7 +3,7 @@ import { Heart } from "lucide-react";
 
 const CoupleScene = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full relative z-20">
+    <div className="flex flex-col items-center justify-center h-full w-full relative z-20 pb-20 sm:pb-24">
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

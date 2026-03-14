@@ -18,7 +18,7 @@ const RsvpScene = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full relative z-20 px-6">
+    <div className="flex flex-col items-center justify-center h-full w-full relative z-20 px-6 pb-20 sm:pb-24">
       <motion.div
         initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
