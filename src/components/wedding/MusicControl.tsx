@@ -14,8 +14,7 @@ const MusicControl = ({ shouldPlay }: MusicControlProps) => {
     // 🎵 CUSTOM MUSIC: Replace the URL below with your own MP3 file
     // e.g. a romantic instrumental inspired by "The Way You Look At Me" – Nyoman Paul
     // You can upload your own MP3 and paste the URL here.
-    const MUSIC_URL =
-      "https://cdn.pixabay.com/audio/2024/11/28/audio_3a4f12bd8a.mp3";
+    const MUSIC_URL = "/music/wedding-music.mp3";
 
     const audio = new Audio(MUSIC_URL);
     audio.loop = true;
