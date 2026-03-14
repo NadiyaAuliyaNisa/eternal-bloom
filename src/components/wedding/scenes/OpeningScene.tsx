@@ -8,11 +8,10 @@ interface OpeningSceneProps {
 const OpeningScene = ({ onOpen }: OpeningSceneProps) => {
   const [phase, setPhase] = useState<"bismillah" | "envelope">("bismillah");
 
-  // Auto transition from bismillah to envelope
-  useState(() => {
+  useEffect(() => {
     const timer = setTimeout(() => setPhase("envelope"), 3500);
     return () => clearTimeout(timer);
-  });
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center h-full w-full relative z-20">
