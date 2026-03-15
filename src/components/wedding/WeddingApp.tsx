@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import GoldenParticles from "./GoldenParticles";
 import FallingPetals from "./FallingPetals";
@@ -8,21 +8,26 @@ import NavigationHUD from "./NavigationHUD";
 import OpeningScene from "./scenes/OpeningScene";
 import BismillahScene from "./scenes/BismillahScene";
 import CoupleScene from "./scenes/CoupleScene";
+import IntroScene from "./scenes/IntroScene";
 import NamesScene from "./scenes/NamesScene";
 import LoveStoryScene from "./scenes/LoveStoryScene";
 import EventScene from "./scenes/EventScene";
+import MapScene from "./scenes/MapScene";
+import RsvpScene from "./scenes/RsvpScene";
 import GiftScene from "./scenes/GiftScene";
 import FinalScene from "./scenes/FinalScene";
 
-// Cinematic scene flow with individual durations (ms)
 const SCENES = [
-  { component: BismillahScene, duration: 6000 },   // Scene 1 – Bismillah
-  { component: CoupleScene, duration: 8000 },       // Scene 2 – Couple photos
-  { component: NamesScene, duration: 8000 },        // Scene 3 – Full names
-  { component: LoveStoryScene, duration: 10000 },   // Scene 4 – Love story
-  { component: EventScene, duration: 9000 },        // Scene 5 – Wedding date
-  { component: GiftScene, duration: 0 },            // Scene 6 – Gift (paused)
-  { component: FinalScene, duration: 10000 },       // Scene 7 – Closing
+  { component: BismillahScene, duration: 6000 },
+  { component: CoupleScene, duration: 8000 },
+  { component: IntroScene, duration: 7000 },
+  { component: NamesScene, duration: 8000 },
+  { component: LoveStoryScene, duration: 10000 },
+  { component: EventScene, duration: 9000 },
+  { component: MapScene, duration: 0 },
+  { component: RsvpScene, duration: 0 },
+  { component: GiftScene, duration: 0 },
+  { component: FinalScene, duration: 12000 },
 ];
 
 const sceneVariants = {
@@ -56,7 +61,6 @@ const WeddingApp = () => {
 
     const scene = SCENES[currentScene];
 
-    // Pause on interactive scenes (duration === 0)
     if (scene.duration === 0) {
       setIsPaused(true);
       return;
@@ -73,9 +77,11 @@ const WeddingApp = () => {
 
   const CurrentSceneComponent = SCENES[currentScene].component;
 
+  // Scenes that show floating hearts
+  const heartScenes = [1, 9]; // CoupleScene, FinalScene
+
   return (
     <div className="fixed inset-0 bg-background overflow-hidden">
-      {/* Cinematic background overlay */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsla(43,52%,56%,0.03)_0%,_transparent_70%)]" />
@@ -87,8 +93,8 @@ const WeddingApp = () => {
         <OpeningScene onOpen={handleOpen} />
       ) : (
         <>
-          <FallingPetals count={currentScene === 6 ? 20 : 12} />
-          {(currentScene === 1 || currentScene === 6) && <FloatingHearts count={6} />}
+          <FallingPetals count={currentScene === 9 ? 20 : 12} />
+          {heartScenes.includes(currentScene) && <FloatingHearts count={6} />}
 
           <AnimatePresence mode="wait">
             <motion.div
