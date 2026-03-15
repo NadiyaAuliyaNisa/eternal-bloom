@@ -43,7 +43,7 @@ const MapScene = () => {
           rel="noopener noreferrer"
           className="block mt-4 text-center px-6 py-3 border border-primary/30 text-primary font-body text-[10px] tracking-[0.2em] uppercase hover:bg-primary/10 transition-all"
         >
-          Buka di Google Maps
+          Lihat Lokasi
         </a>
       </motion.div>
     </div>

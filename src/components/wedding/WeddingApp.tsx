@@ -8,8 +8,6 @@ import NavigationHUD from "./NavigationHUD";
 import OpeningScene from "./scenes/OpeningScene";
 import BismillahScene from "./scenes/BismillahScene";
 import CoupleScene from "./scenes/CoupleScene";
-import IntroScene from "./scenes/IntroScene";
-import NamesScene from "./scenes/NamesScene";
 import LoveStoryScene from "./scenes/LoveStoryScene";
 import EventScene from "./scenes/EventScene";
 import MapScene from "./scenes/MapScene";
@@ -18,10 +16,8 @@ import GiftScene from "./scenes/GiftScene";
 import FinalScene from "./scenes/FinalScene";
 
 const SCENES = [
-  { component: BismillahScene, duration: 6000 },
+  { component: BismillahScene, duration: 10000 },
   { component: CoupleScene, duration: 8000 },
-  { component: IntroScene, duration: 7000 },
-  { component: NamesScene, duration: 8000 },
   { component: LoveStoryScene, duration: 10000 },
   { component: EventScene, duration: 9000 },
   { component: MapScene, duration: 0 },
@@ -77,8 +73,7 @@ const WeddingApp = () => {
 
   const CurrentSceneComponent = SCENES[currentScene].component;
 
-  // Scenes that show floating hearts
-  const heartScenes = [1, 9]; // CoupleScene, FinalScene
+  const heartScenes = [1, 7]; // CoupleScene, FinalScene
 
   return (
     <div className="fixed inset-0 bg-background overflow-hidden">
@@ -93,7 +88,7 @@ const WeddingApp = () => {
         <OpeningScene onOpen={handleOpen} />
       ) : (
         <>
-          <FallingPetals count={currentScene === 9 ? 20 : 12} />
+          <FallingPetals count={currentScene === 7 ? 20 : 12} />
           {heartScenes.includes(currentScene) && <FloatingHearts count={6} />}
 
           <AnimatePresence mode="wait">

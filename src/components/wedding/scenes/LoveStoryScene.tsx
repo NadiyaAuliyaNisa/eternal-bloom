@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const timeline = [
-  { year: "2023", text: "Kami pertama kali diperkenalkan oleh sahabat." },
-  { year: "September 2025", text: "Kami mulai berkomunikasi dan akhirnya bertemu." },
-  { year: "Perjalanan menuju keseriusan", text: "Seiring waktu berjalan kami semakin yakin hingga akhirnya memutuskan untuk melangkah ke jenjang yang lebih serius." },
+  { year: "2023", text: "Dipertemukan oleh sahabat." },
+  { year: "September 2025", text: "Mulai berkomunikasi dan bertemu." },
+  { year: "Menuju Keseriusan", text: "Akhirnya kami memutuskan untuk melangkah menuju jenjang yang lebih serius." },
 ];
 
 const LoveStoryScene = () => {
@@ -15,11 +15,10 @@ const LoveStoryScene = () => {
         transition={{ duration: 1 }}
         className="font-display text-3xl md:text-4xl italic text-primary gold-text-glow mb-10"
       >
-        Our Love Story
+        Love Story
       </motion.h2>
 
       <div className="relative max-w-md w-full">
-        {/* Timeline line */}
         <motion.div
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
@@ -35,7 +34,6 @@ const LoveStoryScene = () => {
             transition={{ delay: 0.5 + i * 0.6, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="relative pl-10 pb-8"
           >
-            {/* Dot */}
             <div className="absolute left-2.5 top-1 w-3 h-3 rounded-full bg-primary border-2 border-background animate-pulse-gold" />
             <p className="font-body text-[10px] tracking-[0.2em] uppercase text-primary mb-1">
               {item.year}
