@@ -20,10 +20,10 @@ const SCENES = [
   { component: CoupleScene, duration: 8000 },
   { component: LoveStoryScene, duration: 10000 },
   { component: EventScene, duration: 9000 },
-  { component: MapScene, duration: 0 },
-  { component: RsvpScene, duration: 0 },
-  { component: GiftScene, duration: 0 },
-  { component: FinalScene, duration: 12000 },
+  { component: MapScene, duration: 6000 },
+  { component: RsvpScene, duration: 6000 },
+  { component: GiftScene, duration: 5000 },
+  { component: FinalScene, duration: 10000 },
 ];
 
 const sceneVariants = {
@@ -56,11 +56,7 @@ const WeddingApp = () => {
     if (!isOpened || isPaused) return;
 
     const scene = SCENES[currentScene];
-
-    if (scene.duration === 0) {
-      setIsPaused(true);
-      return;
-    }
+    if (scene.duration === 0) return;
 
     const timer = setTimeout(nextScene, scene.duration);
     return () => clearTimeout(timer);
