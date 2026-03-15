@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const timeline = [
-  { year: "2023", text: "Dipertemukan oleh sahabat." },
+  { year: "2023", text: "Diperkenalkan oleh sahabat." },
   { year: "September 2025", text: "Mulai berkomunikasi dan bertemu." },
   { year: "Menuju Keseriusan", text: "Akhirnya kami memutuskan untuk melangkah menuju jenjang yang lebih serius." },
 ];
