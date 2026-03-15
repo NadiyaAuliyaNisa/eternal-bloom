@@ -46,9 +46,9 @@ const OpeningScene = ({ onOpen }: OpeningSceneProps) => {
         >
           Tanpa mengurangi rasa hormat,
           <br />
-          kami mengundang Anda untuk hadir
+          kami mengundang Bapak/Ibu/Saudara/i
           <br />
-          di acara pernikahan kami.
+          untuk hadir pada acara pernikahan kami.
         </motion.p>
 
         <motion.button

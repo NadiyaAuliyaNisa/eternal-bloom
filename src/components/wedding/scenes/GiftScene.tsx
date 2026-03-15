@@ -17,14 +17,25 @@ const GiftScene = () => {
         initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
         transition={{ duration: 1.2 }}
-        className="max-w-sm w-full"
+        className="max-w-sm w-full text-center"
       >
-        <div className="text-center mb-8">
-          <Gift className="text-primary mx-auto mb-4" size={32} />
-          <h2 className="font-display text-3xl md:text-4xl italic text-primary gold-text-glow">
-            Wedding Gift
-          </h2>
-        </div>
+        <Gift className="text-primary mx-auto mb-4" size={32} />
+        <h2 className="font-display text-3xl md:text-4xl italic text-primary gold-text-glow mb-6">
+          Wedding Gift
+        </h2>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 1 }}
+          className="font-display text-sm md:text-base italic text-foreground/70 leading-relaxed mb-8"
+        >
+          Doa restu Anda merupakan karunia yang sangat berarti bagi kami.
+          <br />
+          Namun jika memberi adalah ungkapan tanda kasih,
+          <br />
+          Anda dapat memberikan hadiah melalui:
+        </motion.p>
 
         <div className="bg-gradient-to-br from-secondary to-background border border-primary/20 p-8 rounded-lg gold-glow">
           <div className="text-center space-y-4">

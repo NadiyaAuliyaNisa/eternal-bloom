@@ -25,9 +25,20 @@ const RsvpScene = () => {
         transition={{ duration: 1.2 }}
         className="max-w-md w-full"
       >
-        <h2 className="font-display text-3xl md:text-4xl italic text-primary gold-text-glow text-center mb-8">
-          RSVP
+        <h2 className="font-display text-3xl md:text-4xl italic text-primary gold-text-glow text-center mb-3">
+          Konfirmasi Kehadiran
         </h2>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 1 }}
+          className="font-display text-sm italic text-foreground/60 text-center mb-8 leading-relaxed"
+        >
+          Silakan mengisi form konfirmasi kehadiran
+          <br />
+          untuk memberitahukan apakah Anda dapat hadir.
+        </motion.p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
