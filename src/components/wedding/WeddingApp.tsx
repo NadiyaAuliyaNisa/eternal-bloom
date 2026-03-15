@@ -56,11 +56,7 @@ const WeddingApp = () => {
     if (!isOpened || isPaused) return;
 
     const scene = SCENES[currentScene];
-
-    if (scene.duration === 0) {
-      setIsPaused(true);
-      return;
-    }
+    if (scene.duration === 0) return;
 
     const timer = setTimeout(nextScene, scene.duration);
     return () => clearTimeout(timer);
