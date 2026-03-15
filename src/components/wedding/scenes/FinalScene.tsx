@@ -8,27 +8,32 @@ const FinalScene = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="text-center space-y-8"
+        className="text-center space-y-8 max-w-md"
       >
         <Heart className="text-primary fill-primary mx-auto animate-float" size={36} />
 
-        <h2 className="font-display text-3xl md:text-5xl italic text-primary gold-text-glow leading-snug">
-          Terima Kasih<br />Atas Doa & Kehadiran Anda
-        </h2>
-
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="font-arabic text-xl text-primary/80"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 1.2 }}
+          className="font-display text-lg md:text-xl italic text-foreground/80 leading-relaxed"
         >
-          وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami
+          apabila Bapak/Ibu/Saudara/i
+          berkenan hadir untuk memberikan doa restu.
         </motion.p>
+
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="w-20 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto"
+        />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 1 }}
+          transition={{ delay: 2, duration: 1 }}
           className="space-y-2"
         >
           <p className="font-body text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
@@ -38,6 +43,15 @@ const FinalScene = () => {
             Bahrudin & Chella
           </p>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.5, duration: 1.5 }}
+          className="font-arabic text-xl text-primary/80"
+        >
+          وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
+        </motion.p>
       </motion.div>
     </div>
   );
